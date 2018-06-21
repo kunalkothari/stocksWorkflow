@@ -223,24 +223,4 @@ for validTickers in inputTickers.find({'extract':'Y'}).sort([("ticker",pm.ASCEND
                                                                   scol50x200:spos50x200, 
                                                                   scol100x200:spos100x200}})
 
-# In[9]:
-'''
-path="/Users/kunkotha/Downloads/"
-os.chdir(path)
-with open("OpFile.csv",'w') as f:
-    datacur = tickerData.find({'tickerName': 'AAPL'}).sort('date',pm.DESCENDING).limit(1)
-    for i in datacur:
-        for j in i.keys():
-            f.write(j+',')
-    
-with open("OpFile.csv",'a') as f:
-    f.write('\n')
-    for validTickers in inputTickers.find({'extract':'Y'}).sort([('ticker',pm.ASCENDING)]):
-         tickerName = validTickers['ticker']
-         datacur = tickerData.find({'tickerName': tickerName}).sort('date',pm.DESCENDING).limit(1)
-         for i in datacur:
-            for j in i.values():
-                f.write(str(j) + ',')
-            f.write('\n')
 
-'''
